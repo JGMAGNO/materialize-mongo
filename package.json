@@ -10,6 +10,7 @@
     "bcrypt-nodejs": "*",
     "bower": "1.8.8",
     "cookie-parser": "~1.4.4",
+    "connect-flash": "*",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "ejs-locals": "*",

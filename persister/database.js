@@ -40,7 +40,7 @@ var db = function() {
         //   } 
         // });
 
-        mongoose.connect(connectUrl, (opts ? opts : {useNewUrlParser: true}));
+        mongoose.connect(connectUrl, (opts ? opts : {useNewUrlParser: true, useUnifiedTopology: true}));
         // CHANGE 'connectUrl' to 'cloudUrl' to make database online.
         //mongoose.createConnection(connectUrl, (opts ? opts : {}));
 

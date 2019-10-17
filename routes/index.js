@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 const path = require('path');
 const notifier = require('node-notifier');
 
-mongoose.connect('mongodb://localhost/database_name',{useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect('mongodb://localhost/database_name',{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true});
 var db = mongoose.connection;
 
 module.exports = function(app, passport){
@@ -21,5 +21,5 @@ module.exports = function(app, passport){
 		  appID : 'App Name'
 		});	  
 	});
-	
+
 }
