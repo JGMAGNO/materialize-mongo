@@ -1,9 +1,25 @@
-var express = require('express');
-var router = express.Router();
+var student= require('../persister/student');
+var subject = require('../persister/subject');
+var teacher = require('../persister/teacher');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+var bcrypt = require('bcrypt-nodejs');
+var mongoose = require('mongoose');
+const path = require('path');
+const notifier = require('node-notifier');
 
-module.exports = router;
+mongoose.connect('mongodb://localhost/database_name',{useNewUrlParser: true, useCreateIndex: true});
+var db = mongoose.connection;
+
+module.exports = function(app, passport){
+
+	app.get('/', function(req, res, next) {
+	  res.render('index', { title: 'Express' });
+		notifier.notify({
+		  title: 'Information',
+		  message: 'This is a success',
+		  icon: path.join(__dirname, '../public/images/checked.png'),
+		  appID : 'App Name'
+		});	  
+	});
+	
+}
